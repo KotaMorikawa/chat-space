@@ -1,24 +1,66 @@
-# README
+#データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## members table
 
-Things you may want to cover:
+|Column|Type|Option|
+|------|----|------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* Ruby version
+### Asociation
+- belongs_to :group
+- belongs_to :user
 
-* System dependencies
 
-* Configuration
+## users table
 
-* Database creation
+|Column|Type|Option|
+|------|----|------|
+|name|string|index: true, null: false|
+|email|string|null: false, unique: true|
 
-* Database initialization
+### Asociation
+- has_many :messages, through: message_lists
+- has_many :members
+- has_many :groups, through: members
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## messages table
 
-* Deployment instructions
+|Column|Type|Option|
+|------|----|------|
+|body|text|null: false|
+|image|string||
 
-* ...
+### Asociation
+- belongs_to :user through: message_list
+- belongs_to :group through: member
+- belogns_to :member through: user
+
+
+## message_lists
+
+|Column|Type|Option|
+|------|----|------|
+|user_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
+
+### Asociation
+- belongs_to :user
+- belongs_to :message
+
+
+## groups table
+
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false, unique: true, index: true|
+
+### Asociation
+- has_many :users through: members
+- has_many :messages through: message_lists
+
+
+
+
+
