@@ -1,0 +1,9 @@
+@mixin side-font {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+@mixin main-font {
+    font-size: 12px;
+    color: #999999;
+}

@@ -1,0 +1,56 @@
+.flash-box
+  グループを作成しました。
+.chat-side
+  .chat-side__header
+    .chat-side__header__box
+      .chat-side__header__box__user
+        user-name
+      .chat-side__header__box__menu
+        %a.chat-side__header__box__menu__btn.chat-side__header__box__menu__btn--edit{:href => "https://chat-space-sample.herokuapp.com/groups/new"}
+          %i.fa.fa-edit.chat-side__header__box__menu__btn--icon
+        %a.chat-side__header__box__menu__btn.chat-side__header__box__menu__btn--new{:href => "https://chat-space-sample.herokuapp.com"}
+          %i.fa.fa-cog.chat-side__header__box__menu__btn--icon
+  .chat-side__groups
+    .chat-side__groups__box
+      .chat-side__groups__box--name
+        test-group
+      .chat-side__groups__box--text
+        さよなら
+.chat-main
+  .chat-main__header
+    .chat-main__header__box
+      .chat-main__header__box__gname
+        グループ名
+      .chat-main__header__box__list
+        member_list
+    .chat-main__header__btn
+      .chat-main__header__btn__frame
+        %a.chat-main__header__btn__frame__font{:href => "https://chat-space-sample.herokuapp.com"}
+          edit
+  .chat-main__messages
+    .chat-main__messages__content
+      .chat-main__messages__content__user
+        .chat-main__messages__content__user--name
+          user_name
+        .chat-main__messages__content__user--date
+          2019/07/10(Wed)
+      .chat-main__messages__content__text
+        こんにちは
+    .chat-main__messages__content
+      .chat-main__messages__content__user
+        .chat-main__messages__content__user--name
+          user_name
+        .chat-main__messages__content__user--date
+          2019/07/10(Wed)
+      .chat-main__messages__content__text
+        はろー
+  .chat-main__form
+    %form{:action => "/", :method => "post"}
+      .chat-main__form__box
+        %input.chat-main__form__box__area{:placeholder => "type a meassage", :type => "textarea"}/
+        %label.chat-main__form__box__image{:for => "message_image"}
+          %label.upload-label{:for => "upload-icon"}
+            %i.fa.fa-picture-o.fa-lg
+            %input#upload-icon.chat-main__form__box__image__file{:type => "file"}/
+      .chat-main__form__btn
+        %input.chat-main__form__btn--style{:type => "submit", :value => "Send"}/
