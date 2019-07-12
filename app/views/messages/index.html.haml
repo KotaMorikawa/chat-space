@@ -6,9 +6,9 @@
       .chat-side__header__box__user
         user-name
       .chat-side__header__box__menu
-        %a.chat-side__header__box__menu__btn.chat-side__header__box__menu__btn--edit{:href => "https://chat-space-sample.herokuapp.com/groups/new"}
+        %a.chat-side__header__box__menu__btn.chat-side__header__box__menu__btn--edit{ href: "https://chat-space-sample.herokuapp.com/groups/new"}
           %i.fa.fa-edit.chat-side__header__box__menu__btn--icon
-        %a.chat-side__header__box__menu__btn.chat-side__header__box__menu__btn--new{:href => "https://chat-space-sample.herokuapp.com"}
+        %a.chat-side__header__box__menu__btn.chat-side__header__box__menu__btn--new{ href: "https://chat-space-sample.herokuapp.com"}
           %i.fa.fa-cog.chat-side__header__box__menu__btn--icon
   .chat-side__groups
     .chat-side__groups__box
@@ -25,7 +25,7 @@
         member_list
     .chat-main__header__btn
       .chat-main__header__btn__frame
-        %a.chat-main__header__btn__frame__font{:href => "https://chat-space-sample.herokuapp.com"}
+        %a.chat-main__header__btn__frame__font{ href: "https://chat-space-sample.herokuapp.com"}
           edit
   .chat-main__messages
     .chat-main__messages__content
@@ -45,12 +45,12 @@
       .chat-main__messages__content__text
         はろー
   .chat-main__form
-    %form{:action => "/", :method => "post"}
+    %form{ action: "/", method: "post"}
       .chat-main__form__box
-        %input.chat-main__form__box__area{:placeholder => "type a meassage", :type => "textarea"}/
-        %label.chat-main__form__box__image{:for => "message_image"}
-          %label.upload-label{:for => "upload-icon"}
+        %input.chat-main__form__box__area{ placeholder: "type a meassage", type: "textarea"}
+        %label.chat-main__form__box__image{ for: "message_image"}
+          %label.upload-label{ for: "upload-icon"}
             %i.fa.fa-picture-o.fa-lg
-            %input#upload-icon.chat-main__form__box__image__file{:type => "file"}/
+            %input#upload-icon.chat-main__form__box__image__file{ type: "file"}/
       .chat-main__form__btn
-        %input.chat-main__form__btn--style{:type => "submit", :value => "Send"}/
+        %input.chat-main__form__btn--style{ type: "submit", value: "Send"}/

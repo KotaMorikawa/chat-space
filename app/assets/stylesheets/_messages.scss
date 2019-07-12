@@ -129,18 +129,18 @@
             height: 50px;
             padding-top: 20px;
             width: calc(100vw - 460px);
-            input.chat-main__form__box__area {width: calc(100% - 40px); padding-left: 10px; }
+            input.chat-main__form__box__area { width: calc(100% - 40px); padding-left: 10px; }
             label.chat-main__form__box__image { position: absolute;
                                                 right: 45px;
                                                 top: 35px;
                                             }
-            input.chat-main__form__box__image__file {display: none; height: 30px; width: 30px;}
+            input.chat-main__form__box__image__file { display: none; height: 30px; width: 30px; }
         }
         &__btn {
             position: absolute;
             right: 30px;
             top: 20px;
-            input.chat-main__form__btn--style {height: 50px; width: 100px; color: white; background-color: #38aef3;}
+            input.chat-main__form__btn--style { height: 50px; width: 100px; color: white; background-color: #38aef3; }
         }
     }
 }
