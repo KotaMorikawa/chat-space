@@ -10,7 +10,9 @@
         = fa_icon 'cog', class: "chat-side__header__box__menu__btn--icon"
 .chat-side__groups
   .chat-side__groups__box
-    .chat-side__groups__box--name
-      test-group
-    .chat-side__groups__box--text
-      さよなら
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .chat-side__groups__box--name
+          = group.name
+        .chat-side__groups__box--text
+          なし
