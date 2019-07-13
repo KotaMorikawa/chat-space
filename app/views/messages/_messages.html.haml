@@ -1,0 +1,10 @@
+.chat-main__messages__content
+  .chat-main__messages__content__user
+    .chat-main__messages__content__user--name
+      = messages.user.name
+    .chat-main__messages__content__user--date
+      = messages.created_at.strftime("%Y/%m/%d %H:%M")
+  .chat-main__messages__content__text
+    - if messages.body.present?
+      = messages.body
+    = image_tag messages.image.url, class: 'chat-main__messages__content__text' if messages.image.present?
