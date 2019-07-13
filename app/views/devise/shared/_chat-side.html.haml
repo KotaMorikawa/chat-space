@@ -9,8 +9,8 @@
       = link_to edit_user_path(current_user), class: "chat-side__header__box__menu__btn" do
         = fa_icon 'cog', class: "chat-side__header__box__menu__btn--icon"
 .chat-side__groups
-  .chat-side__groups__box
-    - current_user.groups.each do |group|
+  -current_user.groups.each do |group|
+    .chat-side__groups__box
       = link_to group_messages_path(group) do
         .chat-side__groups__box--name
           = group.name

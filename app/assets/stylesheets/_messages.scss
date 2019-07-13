@@ -34,7 +34,7 @@
         &__box {
             margin: 0px 20px 40px 20px;
             padding-top: 20px;
-            @include side-font();
+            a {@include side-font(); text-decoration: none;}
             &--name {
                 margin-bottom: 5px;
                 font-size: 15px;
