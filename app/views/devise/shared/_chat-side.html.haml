@@ -1,0 +1,16 @@
+
+.chat-side__header
+  .chat-side__header__box
+    .chat-side__header__box__user
+      = current_user.name
+    .chat-side__header__box__menu
+      =link_to new_group_path, class: "chat-side__header__box__menu__btn" do
+        = fa_icon 'edit', class: "chat-side__header__box__menu__btn--icon"
+      = link_to edit_user_path(current_user), class: "chat-side__header__box__menu__btn" do
+        = fa_icon 'cog', class: "chat-side__header__box__menu__btn--icon"
+.chat-side__groups
+  .chat-side__groups__box
+    .chat-side__groups__box--name
+      test-group
+    .chat-side__groups__box--text
+      さよなら
