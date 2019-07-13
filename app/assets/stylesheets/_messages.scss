@@ -1,13 +1,5 @@
 @import "./variable";
 
-.flash-box {
-    background-color: #38aef3;
-    color: white;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: lighter;
-}
-
 .chat-side {
     float: left;
     width: 300px;
@@ -42,7 +34,7 @@
         &__box {
             margin: 0px 20px 40px 20px;
             padding-top: 20px;
-            @include side-font();
+            a {@include side-font(); text-decoration: none;}
             &--name {
                 margin-bottom: 5px;
                 font-size: 15px;
@@ -95,6 +87,7 @@
     &__messages {
         background-color: #fafafa;
         height: calc(100vh - 190px);
+        overflow: scroll;
         &__content {
             padding: 46px 0 40px 40px;
             &__user {
