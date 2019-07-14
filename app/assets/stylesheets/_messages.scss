@@ -60,7 +60,7 @@
             bottom: 0;
             left: 0;
             padding-left: 40px;
-            &__gmane {
+            &__gname {
                 display: block;
                 font-size: 20px;
                 color: #333333;
@@ -80,7 +80,7 @@
             &__frame {
                 margin: 0 20px;
                 height: 40px;
-                a {color: #38aef0;}
+                a {color: #38aef0; text-decoration: none;}
             }
         }
     }
