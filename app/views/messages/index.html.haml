@@ -6,14 +6,13 @@
       .chat-main__header__box__gname
         = @group.name
       .chat-main__header__box__list
-        - users.each do |user|
-          = user.name
+        Member:
     .chat-main__header__btn
       .chat-main__header__btn__frame
         = link_to edit_group_path(@group), class: "chat-main__header__btn__frame__font" do
           edit
   .chat-main__messages
-    = render partial: "messages", collection: @messages
+    = render partial: "messages", collection: @messages, as: :message
   .chat-main__form
     = form_for [@group, @message] do |f|
       .chat-main__form__box
