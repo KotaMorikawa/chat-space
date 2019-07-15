@@ -48,10 +48,12 @@ group :development, :test do
   gem 'devise'
   gem 'carrierwave'
   gem 'mini_magick'
+  gem 'faker'
+  gem 'capybara'
 end
 
 group :test do
-  gem 'faker'
+
 end
 
 group :development do
