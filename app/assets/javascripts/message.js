@@ -35,9 +35,8 @@ $(function() {
         .done(function(data) {
             var html = buildHTML(data);
             $('.chat-main__messages').append(html)
-            $('#message_body').val('')
-            $('#message_image').val('')
             $(".chat-main__messages").scrollTop( $(".chat-main__messages")[0].scrollHeight );
+            $('#new_message')[0].reset();
         })
          .fail(function() {
             alert('メッセージを入力してください！');
