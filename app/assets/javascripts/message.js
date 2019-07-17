@@ -1,16 +1,19 @@
 $(function() {
     function buildHTML(message) {
+        var body = message.body ? `${ message.body }` : "";
+        var image = message.image ? `<img src= ${ message.image }>` : "";
         var html = `<div class="chat-main__messages__content">
                         <div class="chat-main__messages__content__user">
                             <div class="chat-main__messages__content__user--name">
-                                ${message.user.name}
+                                ${message.user_name}
                             </div>
                             <div class="chat-main__messages__content__user--date">
-                                ${message.created_at}
+                                ${message.time}
                             </div>
                         </div>
                         <div class="chat-main__messages__content__text">
-                            ${message.body}
+                            ${body}
+                            ${image}
                         </div>
                     </div>`
         return html;
@@ -21,7 +24,6 @@ $(function() {
         var formData = new FormData(this);
         var url = $(this).attr('action');
         $(".chat-main__form__btn--style").removeAttr('data-disable-with');
-        // var href = window.location.href + './messages'
         $.ajax({
             url: url,
             type: "POST",
@@ -34,12 +36,14 @@ $(function() {
             var html = buildHTML(data);
             $('.chat-main__messages').append(html)
             $('#message_body').val('')
-            // $().animate({scrollTop: $('.chat-main__messages').height()},500);
-            // $('')
-            
-         })
+            $('#message_image').val('')
+            $(".chat-main__messages").scrollTop( $(".chat-main__messages")[0].scrollHeight );
+        })
          .fail(function() {
-            alert('error');
+            alert('メッセージを入力してください！');
+         })
+         .always(function(data){
+            $('.chat-main__form__btn--style').prop('disabled', false);
          })
     })
 
