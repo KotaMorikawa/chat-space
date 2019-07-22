@@ -45,9 +45,6 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker'
   gem 'capybara'
-  gem "font-awesome-rails"
-  gem "haml-rails"
-  gem 'mini_magick'
 end
 
 group :test do
@@ -69,6 +66,9 @@ gem 'pry-rails'
 gem 'gon'
 gem 'devise'
 gem 'carrierwave'
+gem "font-awesome-rails"
+gem "haml-rails"
+gem 'mini_magick'
 group :production do
   gem 'unicorn', '5.4.1'
 end
