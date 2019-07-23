@@ -4,7 +4,7 @@ $(function() {
         var selected_list = $('#chat-group-users');
         var user_name = $('.current_user_name').val();
         var user_id = $('.current_user_id').val();
-        var group_users = $('.group_users').val();
+        
         $(function() {
             var html = ` <div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                             <input name='group[user_ids][]' type='hidden' value='${user_id}'>
@@ -13,20 +13,17 @@ $(function() {
             selected_list.append(html)
         });
 
-        $(function() {
-            group_users.forEach(function(group_user) {
-                appendfirst(group_user);
-            })
-
-            function appendfirst(group_user) {
-            var html =` <div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-                            <input name='group[user_ids][]' type='hidden' value='${group_user.id}'>
-                            <p class='chat-group-user__name'>${group_user.name}</p>
+        if(document.URL.match(/^(?=.*edit)(?=.*groups)/)){
+            var users = gon.users
+            users.forEach(function(user){
+                var html =` <div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+                            <input name='group[user_ids][]' type='hidden' value='${user.id}'>
+                            <p class='chat-group-user__name'>${user.name}</p>
                             <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
-                        </div>`
+                            </div>`
             selected_list.append(html)
-            }
-        });
+            })
+        }
 
         function appendList(user) {
             var html = `<div class="chat-group-user clearfix">
@@ -42,7 +39,7 @@ $(function() {
                             <p class='chat-group-user__name'>${user_name}</p>
                             <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                         </div>`
-            selected_list.append(html)
+            selected_list.append(html);
 
         }
 

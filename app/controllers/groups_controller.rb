@@ -19,6 +19,7 @@ class GroupsController < ApplicationController
     end
 
     def edit
+        gon.users = @users
     end
 
     def update
@@ -36,5 +37,6 @@ class GroupsController < ApplicationController
 
     def set_group
         @group = Group.find(params[:id])
+        @users = @group.users.where.not(id: current_user.id)
     end
 end
