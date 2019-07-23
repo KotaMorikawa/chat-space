@@ -24,6 +24,8 @@
         %input{name: "chat_group[user_ids][]", type: "hidden", value: "22"}
         %input{name: "current_user_name", type: "hidden", value: current_user.name, class: 'current_user_name' }/
         %input{name: "current_user_id", type: "hidden", value: current_user.id, class: 'current_user_id' }/
+        = f.hidden_field :group_users, :class="group_users"
+          %input{name: "group_users", type: "hidden", value: @group.users, class: 'group_users'}
         %p.chat-group-user__name
 
   .chat-group-form__field.clearfix
