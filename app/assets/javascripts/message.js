@@ -20,12 +20,16 @@ $(function() {
                     </div>`
         return html;
     }
+    var jqxhr; 
     $('#new_message').on('submit', function(e) {
         e.preventDefault();
         var formData = new FormData(this);
         var url = $(this).attr('action');
         $(".chat-main__form__btn--style").removeAttr('data-disable-with');
-        $.ajax({
+        if (jqxhr){       
+            return;
+        }
+        jqxhr = $.ajax({
             url: url,
             type: "POST",
             data: formData,
