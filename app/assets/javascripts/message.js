@@ -26,6 +26,7 @@ $(function() {
         var formData = new FormData(this);
         var url = $(this).attr('action');
         // $(".chat-main__form__btn--style").removeAttr('data-disable-with');
+        $(this).prop('disabled',true);
         
          $.ajax({
             url: url,
